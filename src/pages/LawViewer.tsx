@@ -45,20 +45,7 @@ export default function LawViewer() {
         return rule.articles.filter(a => relatedIds.includes(a.id));
     };
 
-    const handleArticleClick = (articleNumber: string) => {
-        const law = laws.find(l => l.id === selectedLawId);
-        const article = law?.articles.find(a => a.number === articleNumber);
-        if (article) {
-            setSelectedArticleId(article.id);
-        } else {
-            const mainLaw = laws.find(l => l.id === "copyright_law");
-            const mainArticle = mainLaw?.articles.find(a => a.number === articleNumber);
-            if (mainArticle) {
-                setSelectedLawId("copyright_law");
-                setSelectedArticleId(mainArticle.id);
-            }
-        }
-    };
+
 
     const selectedArticle = getSelectedArticle();
     const selectedLaw = laws.find(l => l.id === selectedLawId);
@@ -197,7 +184,6 @@ export default function LawViewer() {
                                             articleTitle={selectedArticle.title}
                                             lawName="저작권법"
                                             lawType="law"
-                                            onArticleClick={handleArticleClick}
                                         />
                                     </div>
                                 </div>
@@ -214,7 +200,6 @@ export default function LawViewer() {
                                                         articleTitle={article.title}
                                                         lawName="시행령"
                                                         lawType="decree"
-                                                        onArticleClick={handleArticleClick}
                                                     />
                                                 </div>
                                             </div>
@@ -238,7 +223,6 @@ export default function LawViewer() {
                                                         articleTitle={article.title}
                                                         lawName="시행규칙"
                                                         lawType="rule"
-                                                        onArticleClick={handleArticleClick}
                                                     />
                                                 </div>
                                             </div>
@@ -261,7 +245,6 @@ export default function LawViewer() {
                                             articleTitle={selectedArticle.title}
                                             lawName={selectedLaw?.name || ''}
                                             lawType={selectedLawId === 'copyright_decree' ? 'decree' : 'rule'}
-                                            onArticleClick={handleArticleClick}
                                         />
                                     </div>
                                 </div>

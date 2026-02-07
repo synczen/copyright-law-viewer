@@ -6,7 +6,6 @@ interface ArticleContentProps {
     articleTitle: string;
     lawName: string;
     lawType: 'law' | 'decree' | 'rule';
-    onArticleClick?: (articleNumber: string) => void;
 }
 
 export default function ArticleContent({
@@ -14,8 +13,7 @@ export default function ArticleContent({
     articleNumber,
     articleTitle,
     lawName,
-    lawType,
-    onArticleClick
+    lawType
 }: ArticleContentProps) {
     // 1. 외부 법령 참조 패턴 (「식품위생법 시행령」 제21조제8호)
     const externalLawPattern = /(「([^」]+)」(?:\s*(제\d+조(?:의\d+)?(?:제\d+항)?(?:제\d+호)?(?:의\d+)?))?)/g;
