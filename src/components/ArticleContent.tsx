@@ -18,11 +18,9 @@ export default function ArticleContent({
     onArticleClick
 }: ArticleContentProps) {
     // 1. 외부 법령 참조 패턴 (「식품위생법 시행령」 제21조제8호)
-    // 그룹 1: 전체, 그룹 2: 법령명, 그룹 3: 조문번호(선택)
     const externalLawPattern = /(「([^」]+)」(?:\s*(제\d+조(?:의\d+)?(?:제\d+항)?(?:제\d+호)?(?:의\d+)?))?)/g;
 
     // 2. 내부 조문 참조 패턴 (제1조, 제25조제1항, 법 제35조 등)
-    // 외부 법령 패턴에 매칭되지 않은 나머지 중에서 찾음
     const articleRefPattern = /((?:법|령|규칙|이 법|이 영|이 규칙)?\s*제\d+조(?:의\d+)?(?:제\d+항)?(?:제\d+호)?(?:의\d+)?)/g;
 
     // 3. 개정 이력 패턴
@@ -38,14 +36,20 @@ export default function ArticleContent({
     };
     const colors = getColors();
 
+    // 법령 타입에 따른 국가법령정보센터 URL 파라미터 매핑
+    const getLawUrlName = () => {
+        switch (lawType) {
+            case 'law': return '저작권법';
+            case 'decree': return '저작권법시행령';
+            case 'rule': return '저작권법시행규칙';
+            default: return '저작권법';
+        }
+    };
+
     const parseContent = (text: string): React.ReactNode[] => {
         const parts: React.ReactNode[] = [];
         let lastIndex = 0;
 
-        // 정규식 결합 (주의: 순서 중요. 외부 법령이 내부 조문보다 먼저 매칭되어야 함)
-        // 1: 외부법령(전체), 2: 법령명, 3: 조문번호
-        // 4: 내부조문
-        // 5: 개정이력
         const combinedPattern = new RegExp(
             `(${externalLawPattern.source})|(${articleRefPattern.source})|(${amendmentPattern.source})`,
             'g'
@@ -61,10 +65,10 @@ export default function ArticleContent({
 
             if (match[1]) {
                 // 1. 외부 법령 참조
-                const lawRefName = match[2]; // 괄호 안 법령명 (예: 식품위생법 시행령)
-                const articleRef = match[3]; // 조문 번호 (예: 제21조제8호) - 없을 수도 있음
+                const lawRefName = match[2];
+                const articleRef = match[3];
 
-                const cleanLawName = lawRefName.replace(/\s+/g, ''); // 공백 제거
+                const cleanLawName = lawRefName.replace(/\s+/g, '');
                 let href = `https://www.law.go.kr/법령/${cleanLawName}`;
                 if (articleRef) {
                     href += `/${articleRef.trim()}`;
@@ -83,21 +87,24 @@ export default function ArticleContent({
                     </a>
                 );
             } else if (match[4]) {
-                // 2. 내부 조문 참조
+                // 2. 내부 조문 참조 (새창 열기로 변경)
+                // "제45조" -> 숫자 추출
+                const numMatch = fullMatch.match(/제\d+조(?:의\d+)?/);
+                const articleNum = numMatch ? numMatch[0] : '';
+
+                // 국가법령정보센터 URL 생성
+                // 예: https://www.law.go.kr/법령/저작권법/제45조
+                const lawUrlName = getLawUrlName();
+                const href = `https://www.law.go.kr/법령/${lawUrlName}/${articleNum}`;
+
                 parts.push(
                     <a
                         key={`ref-${match.index}`}
-                        href="#"
-                        onClick={(e) => {
-                            e.preventDefault();
-                            if (onArticleClick) {
-                                const numMatch = fullMatch.match(/제\d+조(?:의\d+)?/);
-                                if (numMatch) {
-                                    onArticleClick(numMatch[0]);
-                                }
-                            }
-                        }}
-                        className={`${colors.link} underline decoration-1 underline-offset-2`}
+                        href={href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={`${colors.link} underline decoration-1 underline-offset-2 cursor-pointer`}
+                        title="국가법령정보센터에서 보기"
                     >
                         {fullMatch}
                     </a>
