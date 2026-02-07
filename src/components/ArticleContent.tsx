@@ -29,9 +29,9 @@ export default function ArticleContent({
     // 법률 타입별 색상
     const getColors = () => {
         switch (lawType) {
-            case 'law': return { badge: 'bg-blue-100 text-blue-800', link: 'text-blue-600 hover:text-blue-800' };
-            case 'decree': return { badge: 'bg-amber-100 text-amber-800', link: 'text-amber-600 hover:text-amber-800' };
-            case 'rule': return { badge: 'bg-green-100 text-green-800', link: 'text-green-600 hover:text-green-800' };
+            case 'law': return { badge: 'bg-blue-100 text-blue-800', link: 'text-blue-700 font-bold hover:text-blue-900 visited:text-blue-700' };
+            case 'decree': return { badge: 'bg-amber-100 text-amber-800', link: 'text-amber-700 font-bold hover:text-amber-900 visited:text-amber-700' };
+            case 'rule': return { badge: 'bg-green-100 text-green-800', link: 'text-green-700 font-bold hover:text-green-900 visited:text-green-700' };
         }
     };
     const colors = getColors();
