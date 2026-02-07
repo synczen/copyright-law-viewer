@@ -1,0 +1,110 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --primary: #1e3a5f;
+    --primary-foreground: #eff6ff;
+    --accent: #d4a574;
+    --background: #ffffff;
+    --foreground: #1f2937;
+    --muted: #f3f4f6;
+    --muted-foreground: #6b7280;
+    --border: #e5e7eb;
+}
+
+body {
+    font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+@layer base {
+    * {
+        @apply border-gray-200;
+    }
+
+    body {
+        @apply bg-white text-gray-900;
+    }
+}
+
+@layer components {
+    .law-viewer {
+        @apply flex h-screen bg-white text-gray-900;
+    }
+
+    .law-nav {
+        @apply w-64 border-r border-gray-200 bg-gray-50 overflow-y-auto;
+    }
+
+    .law-nav-header {
+        @apply sticky top-0 bg-white border-b border-gray-200 p-4;
+    }
+
+    .law-nav-title {
+        @apply text-xl font-bold text-blue-900;
+    }
+
+    .law-nav-subtitle {
+        @apply text-sm text-gray-600 mt-1;
+    }
+
+    .law-content {
+        @apply flex-1 overflow-y-auto;
+    }
+
+    .article-header {
+        @apply mb-8 border-b-2 border-blue-900 pb-6;
+    }
+
+    .article-number-badge {
+        @apply inline-block bg-blue-900 text-white px-4 py-2 rounded font-bold text-lg;
+    }
+
+    .article-title {
+        @apply text-3xl font-bold text-blue-900;
+    }
+
+    .comparison-container {
+        @apply grid grid-cols-1 md:grid-cols-3 gap-6;
+    }
+
+    .comparison-column {
+        @apply rounded-lg border-l-4 p-6 shadow-sm;
+    }
+
+    .comparison-column-law {
+        @apply bg-blue-50 border-blue-600;
+    }
+
+    .comparison-column-decree {
+        @apply bg-amber-50 border-amber-600;
+    }
+
+    .comparison-column-rule {
+        @apply bg-green-50 border-green-600;
+    }
+
+    .comparison-badge {
+        @apply text-white px-3 py-1 rounded text-sm font-semibold;
+    }
+
+    .comparison-badge-law {
+        @apply bg-blue-600;
+    }
+
+    .comparison-badge-decree {
+        @apply bg-amber-600;
+    }
+
+    .comparison-badge-rule {
+        @apply bg-green-600;
+    }
+
+    button:not(:disabled),
+    [role="button"]:not([aria-disabled="true"]),
+    a[href] {
+        @apply cursor-pointer;
+    }
+}
