@@ -74,7 +74,33 @@ export default function LawNavigation({
                 ))}
             </div>
 
-            {/* 장별 아코디언 (장이 있는 경우) */}
+            {/* Articles not in any chapter (usually Decree/Rules main body) */}
+            {selectedLaw && (
+                <div className="border-l border-gray-200 ml-2 mb-4">
+                    {selectedLaw.articles
+                        .filter(article => !article.chapter)
+                        .map(article => (
+                            <button
+                                key={article.id}
+                                onClick={() => onArticleSelect(article.id, article.number)}
+                                className={`w-full text-left px-3 py-1.5 text-sm transition-colors ${selectedArticleId === article.id
+                                    ? 'bg-blue-100 text-blue-800 font-medium'
+                                    : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'
+                                    }`}
+                            >
+                                <span className="font-medium">{article.number}</span>
+                                <span className="ml-1 text-gray-500">{article.title}</span>
+                                {/* 관련 조문 있으면 표시 (저작권법만) */}
+                                {selectedLawId === "copyright_law" &&
+                                    (article.relatedDecree?.length > 0 || article.relatedRule?.length > 0) && (
+                                        <span className="ml-2 text-xs text-blue-500">●</span>
+                                    )}
+                            </button>
+                        ))}
+                </div>
+            )}
+
+            {/* Chapters (Regular Law Chapters & Supplementary Provisions) */}
             {selectedLaw && selectedLaw.chapters.length > 0 && (
                 selectedLaw.chapters.map(chapter => {
                     const chapterArticles = getArticlesByChapter(chapter.number);
@@ -104,8 +130,8 @@ export default function LawNavigation({
                                             key={article.id}
                                             onClick={() => onArticleSelect(article.id, article.number)}
                                             className={`w-full text-left px-3 py-1.5 text-sm transition-colors ${selectedArticleId === article.id
-                                                    ? 'bg-blue-100 text-blue-800 font-medium'
-                                                    : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'
+                                                ? 'bg-blue-100 text-blue-800 font-medium'
+                                                : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'
                                                 }`}
                                         >
                                             <span className="font-medium">{article.number}</span>
@@ -122,25 +148,6 @@ export default function LawNavigation({
                         </div>
                     );
                 })
-            )}
-
-            {/* 장 없는 조문 표시 (시행령, 시행규칙 등) */}
-            {selectedLaw && selectedLaw.chapters.length === 0 && (
-                <div className="border-l border-gray-200 ml-2">
-                    {selectedLaw.articles.map(article => (
-                        <button
-                            key={article.id}
-                            onClick={() => onArticleSelect(article.id, article.number)}
-                            className={`w-full text-left px-3 py-1.5 text-sm transition-colors ${selectedArticleId === article.id
-                                    ? 'bg-blue-100 text-blue-800 font-medium'
-                                    : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'
-                                }`}
-                        >
-                            <span className="font-medium">{article.number}</span>
-                            <span className="ml-1 text-gray-500">{article.title}</span>
-                        </button>
-                    ))}
-                </div>
             )}
         </div>
     );

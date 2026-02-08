@@ -49,7 +49,7 @@ export default function ArticleContent({
         let lastIndex = 0;
 
         const combinedPattern = new RegExp(
-            `(${externalLawPattern.source})|(${articleRefPattern.source})|(${amendmentPattern.source})`,
+            `${externalLawPattern.source}|${articleRefPattern.source}|${amendmentPattern.source}`,
             'g'
         );
 

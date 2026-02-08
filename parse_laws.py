@@ -22,8 +22,14 @@ def parse_articles(content, law_type):
     section_pattern = re.compile(r'^\s*제(\d+)절\s+(.+?)\s*$')
     subsection_pattern = re.compile(r'^\s*제(\d+)관\s+(.+?)\s*$')
     
+    # 부칙 패턴
+    supp_pattern = re.compile(r'^\s*부\s*칙\s*(?:<(.+?)>)?.*$')
+    
     # 조문 패턴: 제1조, 제2조의2, 제101조의7 등
     article_pattern = re.compile(r'^제(\d+조(?:의\d+)?)\(([^)]+)\)')
+    
+    in_supplementary = False
+    supp_prefix = ""
     
     for line in lines:
         line = line.strip()
@@ -47,6 +53,29 @@ def parse_articles(content, law_type):
         subsection_match = subsection_pattern.match(line)
         if subsection_match:
             # 관은 절의 하위이므로 절에 포함
+            continue
+        
+        # 부칙 확인
+        supp_match = supp_pattern.match(line)
+        if supp_match:
+            current_chapter = line.strip()
+            current_section = ""
+            in_supplementary = True
+            
+            # 부칙 식별자 추출 (법률/대통령령/부령 번호 등)
+            supp_info = supp_match.group(1)
+            if supp_info:
+                # "제12345호, 2025. 1. 1." -> "12345" 추출 시도
+                num_match = re.search(r'제(\d+)호', supp_info)
+                if num_match:
+                    supp_prefix = f"supp-{num_match.group(1)}"
+                else:
+                    # 번호가 없으면 해시 또는 임의 값 사용 (여기서는 간단히 supp-index 방식 대신 전체 문자열 기반 해시 등 고려할 수 있으나, 
+                    # 보통 호수가 있음. 만약 없으면 날짜 등을 이용)
+                    supp_prefix = f"supp-{hash(supp_info) % 10000}"
+            else:
+                # 부칙 정보가 없는 경우 (단순 "부칙")
+                supp_prefix = "supp-main"
             continue
         
         # 조문 시작 확인
@@ -73,6 +102,9 @@ def parse_articles(content, law_type):
             
             # ID 정규화 (제1조 -> 1, 제2조의2 -> 2-2)
             id_num = article_num.replace("조", "").replace("의", "-")
+            
+            if in_supplementary:
+                id_num = f"{supp_prefix}-{id_num}"
             
             current_article = {
                 "id": id_num,
@@ -113,6 +145,7 @@ def parse_chapters(content):
     
     chapter_pattern = re.compile(r'^\s*제(\d+)장\s+(.+?)\s*$')
     section_pattern = re.compile(r'^\s*제(\d+)절\s+(.+?)\s*$')
+    supp_pattern = re.compile(r'^\s*부\s*칙\s*(?:<(.+?)>)?.*$')
     
     current_chapter = None
     current_sections = []
@@ -131,6 +164,32 @@ def parse_chapters(content):
                 "id": f"ch{chapter_match.group(1)}",
                 "number": f"제{chapter_match.group(1)}장",
                 "title": chapter_match.group(2).strip()
+            }
+            current_sections = []
+            continue
+        
+        supp_match = supp_pattern.match(line)
+        if supp_match:
+            if current_chapter:
+                current_chapter["sections"] = current_sections
+                chapters.append(current_chapter)
+            
+            # 부칙도 챕터처럼 취급
+            supp_title = line.strip()
+            # ID 생성을 위한 식별자 추출
+            supp_info = supp_match.group(1)
+            supp_id = "supp"
+            if supp_info:
+                 num_match = re.search(r'제(\d+)호', supp_info)
+                 if num_match:
+                     supp_id = f"supp-{num_match.group(1)}"
+                 else:
+                     supp_id = f"supp-{hash(supp_info) % 10000}"
+            
+            current_chapter = {
+                "id": supp_id,
+                "number": supp_title,
+                "title": ""
             }
             current_sections = []
             continue
