@@ -11,13 +11,26 @@ export default function LawViewer() {
     const [selectedArticleId, setSelectedArticleId] = useState<string>("1");
     const [isLoading, setIsLoading] = useState(true);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+    const [explLanguage, setExplLanguage] = useState<'en' | 'ko'>('en');
 
     useEffect(() => {
         async function loadData() {
             try {
-                const response = await fetch('./laws.json');
-                const data: LawData = await response.json();
-                setLaws(data.laws);
+                const [lawsRes, berneRes] = await Promise.all([
+                    fetch('./laws.json'),
+                    fetch('./berne.json')
+                ]);
+                const lawsData: LawData = await lawsRes.json();
+
+                try {
+                    const berneData: Law = await berneRes.json();
+                    setLaws([...lawsData.laws, berneData]);
+                } catch (e) {
+                    console.warn("Berne data failed via fetch, loading separately or error:", e);
+                    setLaws(lawsData.laws);
+                }
+
+
             } catch (error) {
                 console.error("법률 데이터 로드 실패:", error);
             } finally {
@@ -232,6 +245,65 @@ export default function LawViewer() {
                                             <span className="text-gray-400 text-sm">관련 시행규칙 조문 없음</span>
                                         </div>
                                     )}
+                                </div>
+                            </div>
+                        ) : selectedLaw?.lawType === 'convention' ? (
+                            /* 베른협약: 3단 뷰 (영문/국문/해설) */
+                            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                                {/* English */}
+                                <div className="bg-white border border-gray-200 rounded-lg shadow-sm overflow-hidden">
+                                    <div className="border-l-4 border-blue-600 p-4">
+                                        <h3 className="font-bold mb-2 text-blue-900">Original Text (English)</h3>
+                                        <ArticleContent
+                                            content={selectedArticle.content_en || selectedArticle.content || ''}
+                                            articleNumber={selectedArticle.number}
+                                            articleTitle={selectedArticle.title}
+                                            lawName="Berne Convention"
+                                            lawType="convention"
+                                        />
+                                    </div>
+                                </div>
+                                {/* Korean */}
+                                <div className="bg-white border border-gray-200 rounded-lg shadow-sm overflow-hidden">
+                                    <div className="border-l-4 border-purple-600 p-4">
+                                        <h3 className="font-bold mb-2 text-purple-900">Korean Translation</h3>
+                                        <ArticleContent
+                                            content={selectedArticle.content_ko || ''}
+                                            articleNumber={selectedArticle.number}
+                                            articleTitle={selectedArticle.title}
+                                            lawName="베른협약 (국문)"
+                                            lawType="convention"
+                                        />
+                                    </div>
+                                </div>
+                                {/* Explanation */}
+                                <div className="bg-white border border-gray-200 rounded-lg shadow-sm overflow-hidden">
+                                    <div className="border-l-4 border-green-600 p-4">
+                                        <div className="flex justify-between items-center mb-2">
+                                            <h3 className="font-bold text-green-900">Explanation</h3>
+                                            <div className="flex gap-1">
+                                                <button
+                                                    onClick={() => setExplLanguage('en')}
+                                                    className={`text-xs px-2 py-1 rounded transition-colors ${explLanguage === 'en' ? 'bg-green-600 text-white font-bold' : 'bg-gray-100 text-gray-600 hover:bg-gray-200'}`}
+                                                >
+                                                    English
+                                                </button>
+                                                <button
+                                                    onClick={() => setExplLanguage('ko')}
+                                                    className={`text-xs px-2 py-1 rounded transition-colors ${explLanguage === 'ko' ? 'bg-green-600 text-white font-bold' : 'bg-gray-100 text-gray-600 hover:bg-gray-200'}`}
+                                                >
+                                                    한국어
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <ArticleContent
+                                            content={explLanguage === 'en' ? (selectedArticle.content_expl || '') : (selectedArticle.content_expl_ko || '해당 조문의 해설 번역본이 없습니다.')}
+                                            articleNumber={selectedArticle.number}
+                                            articleTitle={selectedArticle.title}
+                                            lawName="해설"
+                                            lawType="convention"
+                                        />
+                                    </div>
                                 </div>
                             </div>
                         ) : (

@@ -4,6 +4,10 @@ export interface Article {
     number: string;
     title: string;
     content: string;
+    content_en?: string;
+    content_ko?: string;
+    content_expl?: string;
+    content_expl_ko?: string;
     chapter: string;
     section: string;
     relatedDecree: string[];
@@ -29,7 +33,7 @@ export interface Law {
     id: string;
     name: string;
     englishName: string;
-    lawType: 'law' | 'decree' | 'rule';
+    lawType: 'law' | 'decree' | 'rule' | 'convention';
     lawNumber: string;
     enactDate: string;
     lastModified: string;

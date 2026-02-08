@@ -5,7 +5,7 @@ interface ArticleContentProps {
     articleNumber: string;
     articleTitle: string;
     lawName: string;
-    lawType: 'law' | 'decree' | 'rule';
+    lawType: 'law' | 'decree' | 'rule' | 'convention';
 }
 
 export default function ArticleContent({
@@ -19,7 +19,7 @@ export default function ArticleContent({
     const externalLawPattern = /(「([^」]+)」(?:\s*(제\d+조(?:의\d+)?(?:제\d+항)?(?:제\d+호)?(?:의\d+)?))?)/g;
 
     // 2. 내부 조문 참조 패턴 (제1조, 제25조제1항, 법 제35조 등)
-    const articleRefPattern = /((?:법|령|규칙|이 법|이 영|이 규칙)?\s*제\d+조(?:의\d+)?(?:제\d+항)?(?:제\d+호)?(?:의\d+)?)/g;
+    const articleRefPattern = /((?:법|령|영|규칙|이 법|이 영|이 규칙)?\s*제\d+조(?:의\d+)?(?:제\d+항)?(?:제\d+호)?(?:의\d+)?)/g;
 
     // 3. 개정 이력 패턴
     const amendmentPattern = /(<(?:개정|신설|삭제|본조신설|제목개정)\s*[^>]+>)/g;
@@ -30,6 +30,8 @@ export default function ArticleContent({
             case 'law': return { badge: 'bg-blue-100 text-blue-800', link: 'text-blue-700 font-bold hover:text-blue-900 visited:text-blue-700' };
             case 'decree': return { badge: 'bg-amber-100 text-amber-800', link: 'text-amber-700 font-bold hover:text-amber-900 visited:text-amber-700' };
             case 'rule': return { badge: 'bg-green-100 text-green-800', link: 'text-green-700 font-bold hover:text-green-900 visited:text-green-700' };
+            case 'convention': return { badge: 'bg-purple-100 text-purple-800', link: 'text-purple-700 font-bold hover:text-purple-900 visited:text-purple-700' };
+            default: return { badge: 'bg-gray-100 text-gray-800', link: 'text-gray-700 font-bold hover:text-gray-900 visited:text-gray-700' };
         }
     };
     const colors = getColors();
@@ -92,8 +94,18 @@ export default function ArticleContent({
 
                 // 국가법령정보센터 URL 생성
                 // 예: https://www.law.go.kr/법령/저작권법/제45조
-                const lawUrlName = getLawUrlName();
-                const href = `https://www.law.go.kr/법령/${lawUrlName}/${articleNum}`;
+                let targetLawUrlName = getLawUrlName();
+
+                // 접두어에 따른 법령명 변경
+                if (fullMatch.includes('법') || fullMatch.includes('이 법')) {
+                    targetLawUrlName = '저작권법';
+                } else if (fullMatch.includes('영') || fullMatch.includes('이 영') || fullMatch.includes('령')) {
+                    targetLawUrlName = '저작권법시행령';
+                } else if (fullMatch.includes('규칙') || fullMatch.includes('이 규칙')) {
+                    targetLawUrlName = '저작권법시행규칙';
+                }
+
+                const href = `https://www.law.go.kr/법령/${targetLawUrlName}/${articleNum}`;
 
                 parts.push(
                     <a
@@ -144,7 +156,7 @@ export default function ArticleContent({
                     ) : null;
 
                     const paragraphMatch = trimmedLine.match(/^([①②③④⑤⑥⑦⑧⑨⑩⑪⑫⑬⑭⑮⑯⑰⑱⑲⑳])/);
-                    const itemMatch = trimmedLine.match(/^(\d+)\.\s*/);
+                    const itemMatch = trimmedLine.match(/^(\d+(?:\.\d+)?)\.\s*/);
                     const subItemMatch = trimmedLine.match(/^([가나다라마바사아자차카타파하])\.\s*/);
 
                     if (paragraphMatch) {

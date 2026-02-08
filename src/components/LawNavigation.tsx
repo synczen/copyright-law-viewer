@@ -38,6 +38,7 @@ export default function LawNavigation({
                 case 'law': return 'bg-blue-600 text-white';
                 case 'decree': return 'bg-amber-600 text-white';
                 case 'rule': return 'bg-green-600 text-white';
+                case 'convention': return 'bg-purple-600 text-white';
                 default: return 'bg-gray-600 text-white';
             }
         }
@@ -49,6 +50,7 @@ export default function LawNavigation({
             case 'law': return '법';
             case 'decree': return '시행령';
             case 'rule': return '시행규칙';
+            case 'convention': return '베른협약';
             default: return '';
         }
     };
