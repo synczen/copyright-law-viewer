@@ -4,6 +4,7 @@ import LawNavigation from "@/components/LawNavigation";
 import LawSearch from "@/components/LawSearch";
 import ArticleContent from "@/components/ArticleContent";
 import { Law, LawData, Article } from "@/types/law";
+import berneUrl from "@/assets/berne.json?url";
 
 export default function LawViewer() {
     const [laws, setLaws] = useState<Law[]>([]);
@@ -18,7 +19,7 @@ export default function LawViewer() {
             try {
                 const [lawsRes, berneRes] = await Promise.all([
                     fetch('./laws.json'),
-                    fetch('./berne.json')
+                    fetch(berneUrl)
                 ]);
                 const lawsData: LawData = await lawsRes.json();
 

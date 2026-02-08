@@ -87,38 +87,42 @@ export default function ArticleContent({
                     </a>
                 );
             } else if (match[4]) {
-                // 2. 내부 조문 참조 (새창 열기로 변경)
-                // "제45조" -> 숫자 추출
-                const numMatch = fullMatch.match(/제\d+조(?:의\d+)?/);
-                const articleNum = numMatch ? numMatch[0] : '';
+                // 2. 내부 조문 참조 (베른협약 등 convention 타입은 링크 제외)
+                if (lawType === 'convention') {
+                    parts.push(fullMatch);
+                } else {
+                    // "제45조" -> 숫자 추출
+                    const numMatch = fullMatch.match(/제\d+조(?:의\d+)?/);
+                    const articleNum = numMatch ? numMatch[0] : '';
 
-                // 국가법령정보센터 URL 생성
-                // 예: https://www.law.go.kr/법령/저작권법/제45조
-                let targetLawUrlName = getLawUrlName();
+                    // 국가법령정보센터 URL 생성
+                    // 예: https://www.law.go.kr/법령/저작권법/제45조
+                    let targetLawUrlName = getLawUrlName();
 
-                // 접두어에 따른 법령명 변경
-                if (fullMatch.includes('법') || fullMatch.includes('이 법')) {
-                    targetLawUrlName = '저작권법';
-                } else if (fullMatch.includes('영') || fullMatch.includes('이 영') || fullMatch.includes('령')) {
-                    targetLawUrlName = '저작권법시행령';
-                } else if (fullMatch.includes('규칙') || fullMatch.includes('이 규칙')) {
-                    targetLawUrlName = '저작권법시행규칙';
+                    // 접두어에 따른 법령명 변경
+                    if (fullMatch.includes('법') || fullMatch.includes('이 법')) {
+                        targetLawUrlName = '저작권법';
+                    } else if (fullMatch.includes('영') || fullMatch.includes('이 영') || fullMatch.includes('령')) {
+                        targetLawUrlName = '저작권법시행령';
+                    } else if (fullMatch.includes('규칙') || fullMatch.includes('이 규칙')) {
+                        targetLawUrlName = '저작권법시행규칙';
+                    }
+
+                    const href = `https://www.law.go.kr/법령/${targetLawUrlName}/${articleNum}`;
+
+                    parts.push(
+                        <a
+                            key={`ref-${match.index}`}
+                            href={href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className={`${colors.link} underline decoration-1 underline-offset-2 cursor-pointer`}
+                            title="국가법령정보센터에서 보기"
+                        >
+                            {fullMatch}
+                        </a>
+                    );
                 }
-
-                const href = `https://www.law.go.kr/법령/${targetLawUrlName}/${articleNum}`;
-
-                parts.push(
-                    <a
-                        key={`ref-${match.index}`}
-                        href={href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className={`${colors.link} underline decoration-1 underline-offset-2 cursor-pointer`}
-                        title="국가법령정보센터에서 보기"
-                    >
-                        {fullMatch}
-                    </a>
-                );
             } else if (match[5]) {
                 // 3. 개정 이력
                 parts.push(
