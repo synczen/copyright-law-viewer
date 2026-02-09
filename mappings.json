@@ -1,0 +1,1179 @@
+[
+  {
+    "lawId": "1",
+    "decreeIds": [],
+    "ruleIds": [
+      "1",
+      "10"
+    ]
+  },
+  {
+    "lawId": "2",
+    "decreeIds": [],
+    "ruleIds": []
+  },
+  {
+    "lawId": "2-2",
+    "decreeIds": [
+      "1-2"
+    ],
+    "ruleIds": []
+  },
+  {
+    "lawId": "3",
+    "decreeIds": [],
+    "ruleIds": []
+  },
+  {
+    "lawId": "4",
+    "decreeIds": [],
+    "ruleIds": []
+  },
+  {
+    "lawId": "5",
+    "decreeIds": [],
+    "ruleIds": []
+  },
+  {
+    "lawId": "6",
+    "decreeIds": [],
+    "ruleIds": []
+  },
+  {
+    "lawId": "7",
+    "decreeIds": [],
+    "ruleIds": []
+  },
+  {
+    "lawId": "8",
+    "decreeIds": [],
+    "ruleIds": []
+  },
+  {
+    "lawId": "9",
+    "decreeIds": [],
+    "ruleIds": []
+  },
+  {
+    "lawId": "10",
+    "decreeIds": [],
+    "ruleIds": []
+  },
+  {
+    "lawId": "11",
+    "decreeIds": [],
+    "ruleIds": []
+  },
+  {
+    "lawId": "12",
+    "decreeIds": [],
+    "ruleIds": []
+  },
+  {
+    "lawId": "13",
+    "decreeIds": [],
+    "ruleIds": []
+  },
+  {
+    "lawId": "14",
+    "decreeIds": [],
+    "ruleIds": []
+  },
+  {
+    "lawId": "15",
+    "decreeIds": [],
+    "ruleIds": []
+  },
+  {
+    "lawId": "16",
+    "decreeIds": [],
+    "ruleIds": []
+  },
+  {
+    "lawId": "17",
+    "decreeIds": [],
+    "ruleIds": []
+  },
+  {
+    "lawId": "18",
+    "decreeIds": [],
+    "ruleIds": []
+  },
+  {
+    "lawId": "19",
+    "decreeIds": [],
+    "ruleIds": []
+  },
+  {
+    "lawId": "20",
+    "decreeIds": [],
+    "ruleIds": []
+  },
+  {
+    "lawId": "21",
+    "decreeIds": [],
+    "ruleIds": []
+  },
+  {
+    "lawId": "22",
+    "decreeIds": [],
+    "ruleIds": []
+  },
+  {
+    "lawId": "23",
+    "decreeIds": [],
+    "ruleIds": []
+  },
+  {
+    "lawId": "24",
+    "decreeIds": [],
+    "ruleIds": []
+  },
+  {
+    "lawId": "24-2",
+    "decreeIds": [
+      "1-3"
+    ],
+    "ruleIds": []
+  },
+  {
+    "lawId": "25",
+    "decreeIds": [
+      "2",
+      "3",
+      "6",
+      "8",
+      "8-2",
+      "9"
+    ],
+    "ruleIds": []
+  },
+  {
+    "lawId": "26",
+    "decreeIds": [],
+    "ruleIds": []
+  },
+  {
+    "lawId": "27",
+    "decreeIds": [],
+    "ruleIds": []
+  },
+  {
+    "lawId": "28",
+    "decreeIds": [
+      "10"
+    ],
+    "ruleIds": []
+  },
+  {
+    "lawId": "29",
+    "decreeIds": [
+      "11"
+    ],
+    "ruleIds": [
+      "2"
+    ]
+  },
+  {
+    "lawId": "30",
+    "decreeIds": [],
+    "ruleIds": [
+      "2-2"
+    ]
+  },
+  {
+    "lawId": "31",
+    "decreeIds": [
+      "12",
+      "13"
+    ],
+    "ruleIds": []
+  },
+  {
+    "lawId": "32",
+    "decreeIds": [],
+    "ruleIds": []
+  },
+  {
+    "lawId": "33",
+    "decreeIds": [
+      "14",
+      "14-2"
+    ],
+    "ruleIds": []
+  },
+  {
+    "lawId": "33-2",
+    "decreeIds": [
+      "15",
+      "15-2"
+    ],
+    "ruleIds": []
+  },
+  {
+    "lawId": "34",
+    "decreeIds": [
+      "16"
+    ],
+    "ruleIds": []
+  },
+  {
+    "lawId": "35",
+    "decreeIds": [],
+    "ruleIds": []
+  },
+  {
+    "lawId": "35-2",
+    "decreeIds": [],
+    "ruleIds": []
+  },
+  {
+    "lawId": "35-3",
+    "decreeIds": [],
+    "ruleIds": []
+  },
+  {
+    "lawId": "35-4",
+    "decreeIds": [
+      "16-2",
+      "16-3",
+      "16-4",
+      "16-5",
+      "16-6"
+    ],
+    "ruleIds": [
+      "2-3"
+    ]
+  },
+  {
+    "lawId": "35-5",
+    "decreeIds": [],
+    "ruleIds": []
+  },
+  {
+    "lawId": "36",
+    "decreeIds": [],
+    "ruleIds": []
+  },
+  {
+    "lawId": "37",
+    "decreeIds": [
+      "17"
+    ],
+    "ruleIds": []
+  },
+  {
+    "lawId": "37-2",
+    "decreeIds": [],
+    "ruleIds": []
+  },
+  {
+    "lawId": "38",
+    "decreeIds": [],
+    "ruleIds": []
+  },
+  {
+    "lawId": "39",
+    "decreeIds": [],
+    "ruleIds": []
+  },
+  {
+    "lawId": "40",
+    "decreeIds": [],
+    "ruleIds": []
+  },
+  {
+    "lawId": "41",
+    "decreeIds": [],
+    "ruleIds": []
+  },
+  {
+    "lawId": "42",
+    "decreeIds": [],
+    "ruleIds": []
+  },
+  {
+    "lawId": "43",
+    "decreeIds": [],
+    "ruleIds": []
+  },
+  {
+    "lawId": "44",
+    "decreeIds": [],
+    "ruleIds": []
+  },
+  {
+    "lawId": "45",
+    "decreeIds": [],
+    "ruleIds": []
+  },
+  {
+    "lawId": "46",
+    "decreeIds": [],
+    "ruleIds": []
+  },
+  {
+    "lawId": "47",
+    "decreeIds": [],
+    "ruleIds": []
+  },
+  {
+    "lawId": "48",
+    "decreeIds": [],
+    "ruleIds": []
+  },
+  {
+    "lawId": "49",
+    "decreeIds": [],
+    "ruleIds": []
+  },
+  {
+    "lawId": "50",
+    "decreeIds": [
+      "18",
+      "19",
+      "20",
+      "21",
+      "23",
+      "23-2",
+      "23-3"
+    ],
+    "ruleIds": [
+      "3",
+      "4"
+    ]
+  },
+  {
+    "lawId": "51",
+    "decreeIds": [
+      "23-4",
+      "23"
+    ],
+    "ruleIds": []
+  },
+  {
+    "lawId": "52",
+    "decreeIds": [],
+    "ruleIds": []
+  },
+  {
+    "lawId": "53",
+    "decreeIds": [
+      "24",
+      "25",
+      "26"
+    ],
+    "ruleIds": [
+      "6"
+    ]
+  },
+  {
+    "lawId": "54",
+    "decreeIds": [
+      "25",
+      "26"
+    ],
+    "ruleIds": []
+  },
+  {
+    "lawId": "55",
+    "decreeIds": [
+      "27",
+      "27-2",
+      "27-3",
+      "27-4",
+      "27-5",
+      "30"
+    ],
+    "ruleIds": [
+      "6-3",
+      "7",
+      "8"
+    ]
+  },
+  {
+    "lawId": "55-2",
+    "decreeIds": [],
+    "ruleIds": []
+  },
+  {
+    "lawId": "55-3",
+    "decreeIds": [
+      "30"
+    ],
+    "ruleIds": [
+      "9"
+    ]
+  },
+  {
+    "lawId": "55-4",
+    "decreeIds": [],
+    "ruleIds": []
+  },
+  {
+    "lawId": "55-5",
+    "decreeIds": [],
+    "ruleIds": []
+  },
+  {
+    "lawId": "56",
+    "decreeIds": [
+      "36",
+      "37",
+      "76-2",
+      "76"
+    ],
+    "ruleIds": [
+      "11",
+      "12"
+    ]
+  },
+  {
+    "lawId": "57",
+    "decreeIds": [],
+    "ruleIds": []
+  },
+  {
+    "lawId": "58",
+    "decreeIds": [
+      "38"
+    ],
+    "ruleIds": []
+  },
+  {
+    "lawId": "58-2",
+    "decreeIds": [],
+    "ruleIds": []
+  },
+  {
+    "lawId": "59",
+    "decreeIds": [],
+    "ruleIds": []
+  },
+  {
+    "lawId": "60",
+    "decreeIds": [],
+    "ruleIds": []
+  },
+  {
+    "lawId": "61",
+    "decreeIds": [],
+    "ruleIds": []
+  },
+  {
+    "lawId": "62",
+    "decreeIds": [],
+    "ruleIds": []
+  },
+  {
+    "lawId": "63",
+    "decreeIds": [],
+    "ruleIds": []
+  },
+  {
+    "lawId": "63-2",
+    "decreeIds": [],
+    "ruleIds": []
+  },
+  {
+    "lawId": "64",
+    "decreeIds": [],
+    "ruleIds": []
+  },
+  {
+    "lawId": "64-2",
+    "decreeIds": [],
+    "ruleIds": []
+  },
+  {
+    "lawId": "65",
+    "decreeIds": [],
+    "ruleIds": []
+  },
+  {
+    "lawId": "66",
+    "decreeIds": [],
+    "ruleIds": []
+  },
+  {
+    "lawId": "67",
+    "decreeIds": [],
+    "ruleIds": []
+  },
+  {
+    "lawId": "68",
+    "decreeIds": [],
+    "ruleIds": []
+  },
+  {
+    "lawId": "69",
+    "decreeIds": [],
+    "ruleIds": []
+  },
+  {
+    "lawId": "70",
+    "decreeIds": [],
+    "ruleIds": []
+  },
+  {
+    "lawId": "71",
+    "decreeIds": [],
+    "ruleIds": []
+  },
+  {
+    "lawId": "72",
+    "decreeIds": [],
+    "ruleIds": []
+  },
+  {
+    "lawId": "73",
+    "decreeIds": [],
+    "ruleIds": []
+  },
+  {
+    "lawId": "74",
+    "decreeIds": [],
+    "ruleIds": []
+  },
+  {
+    "lawId": "75",
+    "decreeIds": [
+      "38-2"
+    ],
+    "ruleIds": []
+  },
+  {
+    "lawId": "76",
+    "decreeIds": [
+      "39"
+    ],
+    "ruleIds": []
+  },
+  {
+    "lawId": "76-2",
+    "decreeIds": [],
+    "ruleIds": []
+  },
+  {
+    "lawId": "77",
+    "decreeIds": [],
+    "ruleIds": []
+  },
+  {
+    "lawId": "78",
+    "decreeIds": [],
+    "ruleIds": []
+  },
+  {
+    "lawId": "79",
+    "decreeIds": [],
+    "ruleIds": []
+  },
+  {
+    "lawId": "80",
+    "decreeIds": [],
+    "ruleIds": []
+  },
+  {
+    "lawId": "81",
+    "decreeIds": [],
+    "ruleIds": []
+  },
+  {
+    "lawId": "82",
+    "decreeIds": [],
+    "ruleIds": []
+  },
+  {
+    "lawId": "83",
+    "decreeIds": [],
+    "ruleIds": []
+  },
+  {
+    "lawId": "83-2",
+    "decreeIds": [],
+    "ruleIds": []
+  },
+  {
+    "lawId": "84",
+    "decreeIds": [],
+    "ruleIds": []
+  },
+  {
+    "lawId": "85",
+    "decreeIds": [],
+    "ruleIds": []
+  },
+  {
+    "lawId": "85-2",
+    "decreeIds": [],
+    "ruleIds": []
+  },
+  {
+    "lawId": "86",
+    "decreeIds": [],
+    "ruleIds": []
+  },
+  {
+    "lawId": "87",
+    "decreeIds": [],
+    "ruleIds": []
+  },
+  {
+    "lawId": "88",
+    "decreeIds": [],
+    "ruleIds": []
+  },
+  {
+    "lawId": "89",
+    "decreeIds": [],
+    "ruleIds": []
+  },
+  {
+    "lawId": "90",
+    "decreeIds": [],
+    "ruleIds": []
+  },
+  {
+    "lawId": "91",
+    "decreeIds": [],
+    "ruleIds": []
+  },
+  {
+    "lawId": "92",
+    "decreeIds": [],
+    "ruleIds": []
+  },
+  {
+    "lawId": "93",
+    "decreeIds": [],
+    "ruleIds": []
+  },
+  {
+    "lawId": "94",
+    "decreeIds": [],
+    "ruleIds": []
+  },
+  {
+    "lawId": "95",
+    "decreeIds": [],
+    "ruleIds": []
+  },
+  {
+    "lawId": "96",
+    "decreeIds": [],
+    "ruleIds": []
+  },
+  {
+    "lawId": "97",
+    "decreeIds": [],
+    "ruleIds": []
+  },
+  {
+    "lawId": "98",
+    "decreeIds": [],
+    "ruleIds": []
+  },
+  {
+    "lawId": "99",
+    "decreeIds": [],
+    "ruleIds": []
+  },
+  {
+    "lawId": "100",
+    "decreeIds": [],
+    "ruleIds": []
+  },
+  {
+    "lawId": "101",
+    "decreeIds": [],
+    "ruleIds": []
+  },
+  {
+    "lawId": "101-2",
+    "decreeIds": [],
+    "ruleIds": []
+  },
+  {
+    "lawId": "101-3",
+    "decreeIds": [],
+    "ruleIds": []
+  },
+  {
+    "lawId": "101-4",
+    "decreeIds": [],
+    "ruleIds": []
+  },
+  {
+    "lawId": "101-5",
+    "decreeIds": [],
+    "ruleIds": []
+  },
+  {
+    "lawId": "101-6",
+    "decreeIds": [],
+    "ruleIds": []
+  },
+  {
+    "lawId": "101-7",
+    "decreeIds": [
+      "39-2"
+    ],
+    "ruleIds": []
+  },
+  {
+    "lawId": "102",
+    "decreeIds": [
+      "39-3"
+    ],
+    "ruleIds": []
+  },
+  {
+    "lawId": "103",
+    "decreeIds": [
+      "40",
+      "41",
+      "42",
+      "44"
+    ],
+    "ruleIds": [
+      "13",
+      "14",
+      "15"
+    ]
+  },
+  {
+    "lawId": "103-2",
+    "decreeIds": [],
+    "ruleIds": []
+  },
+  {
+    "lawId": "103-3",
+    "decreeIds": [
+      "44-2",
+      "44-3",
+      "44-4"
+    ],
+    "ruleIds": []
+  },
+  {
+    "lawId": "104",
+    "decreeIds": [
+      "45",
+      "46"
+    ],
+    "ruleIds": [
+      "17"
+    ]
+  },
+  {
+    "lawId": "104-2",
+    "decreeIds": [
+      "46-2"
+    ],
+    "ruleIds": []
+  },
+  {
+    "lawId": "104-3",
+    "decreeIds": [],
+    "ruleIds": []
+  },
+  {
+    "lawId": "104-4",
+    "decreeIds": [],
+    "ruleIds": []
+  },
+  {
+    "lawId": "104-5",
+    "decreeIds": [],
+    "ruleIds": []
+  },
+  {
+    "lawId": "104-6",
+    "decreeIds": [],
+    "ruleIds": []
+  },
+  {
+    "lawId": "104-7",
+    "decreeIds": [],
+    "ruleIds": []
+  },
+  {
+    "lawId": "104-8",
+    "decreeIds": [],
+    "ruleIds": []
+  },
+  {
+    "lawId": "105",
+    "decreeIds": [
+      "47",
+      "48",
+      "49"
+    ],
+    "ruleIds": [
+      "2-3",
+      "18",
+      "19",
+      "19-2",
+      "19-3"
+    ]
+  },
+  {
+    "lawId": "106",
+    "decreeIds": [
+      "50",
+      "51",
+      "51-2",
+      "51-3"
+    ],
+    "ruleIds": []
+  },
+  {
+    "lawId": "106-2",
+    "decreeIds": [],
+    "ruleIds": []
+  },
+  {
+    "lawId": "107",
+    "decreeIds": [],
+    "ruleIds": []
+  },
+  {
+    "lawId": "108",
+    "decreeIds": [
+      "52",
+      "52-2"
+    ],
+    "ruleIds": [
+      "20"
+    ]
+  },
+  {
+    "lawId": "108-2",
+    "decreeIds": [],
+    "ruleIds": []
+  },
+  {
+    "lawId": "109",
+    "decreeIds": [
+      "53"
+    ],
+    "ruleIds": []
+  },
+  {
+    "lawId": "110",
+    "decreeIds": [],
+    "ruleIds": []
+  },
+  {
+    "lawId": "111",
+    "decreeIds": [
+      "54",
+      "55"
+    ],
+    "ruleIds": [
+      "21",
+      "22"
+    ]
+  },
+  {
+    "lawId": "112",
+    "decreeIds": [
+      "23"
+    ],
+    "ruleIds": [
+      "5"
+    ]
+  },
+  {
+    "lawId": "112-2",
+    "decreeIds": [
+      "59"
+    ],
+    "ruleIds": []
+  },
+  {
+    "lawId": "113",
+    "decreeIds": [],
+    "ruleIds": []
+  },
+  {
+    "lawId": "113-2",
+    "decreeIds": [
+      "59-2"
+    ],
+    "ruleIds": []
+  },
+  {
+    "lawId": "114",
+    "decreeIds": [
+      "60"
+    ],
+    "ruleIds": []
+  },
+  {
+    "lawId": "114-2",
+    "decreeIds": [
+      "61"
+    ],
+    "ruleIds": []
+  },
+  {
+    "lawId": "115",
+    "decreeIds": [],
+    "ruleIds": []
+  },
+  {
+    "lawId": "116",
+    "decreeIds": [],
+    "ruleIds": []
+  },
+  {
+    "lawId": "117",
+    "decreeIds": [],
+    "ruleIds": []
+  },
+  {
+    "lawId": "118",
+    "decreeIds": [],
+    "ruleIds": []
+  },
+  {
+    "lawId": "118-2",
+    "decreeIds": [],
+    "ruleIds": []
+  },
+  {
+    "lawId": "119",
+    "decreeIds": [
+      "64"
+    ],
+    "ruleIds": []
+  },
+  {
+    "lawId": "120",
+    "decreeIds": [
+      "66"
+    ],
+    "ruleIds": []
+  },
+  {
+    "lawId": "121",
+    "decreeIds": [],
+    "ruleIds": []
+  },
+  {
+    "lawId": "122",
+    "decreeIds": [
+      "67"
+    ],
+    "ruleIds": []
+  },
+  {
+    "lawId": "122-2",
+    "decreeIds": [],
+    "ruleIds": []
+  },
+  {
+    "lawId": "122-3",
+    "decreeIds": [],
+    "ruleIds": []
+  },
+  {
+    "lawId": "122-4",
+    "decreeIds": [],
+    "ruleIds": []
+  },
+  {
+    "lawId": "122-5",
+    "decreeIds": [],
+    "ruleIds": []
+  },
+  {
+    "lawId": "122-6",
+    "decreeIds": [
+      "44-4",
+      "67-2"
+    ],
+    "ruleIds": []
+  },
+  {
+    "lawId": "122-7",
+    "decreeIds": [],
+    "ruleIds": []
+  },
+  {
+    "lawId": "123",
+    "decreeIds": [],
+    "ruleIds": []
+  },
+  {
+    "lawId": "124",
+    "decreeIds": [],
+    "ruleIds": []
+  },
+  {
+    "lawId": "125",
+    "decreeIds": [],
+    "ruleIds": []
+  },
+  {
+    "lawId": "125-2",
+    "decreeIds": [],
+    "ruleIds": []
+  },
+  {
+    "lawId": "126",
+    "decreeIds": [],
+    "ruleIds": []
+  },
+  {
+    "lawId": "127",
+    "decreeIds": [],
+    "ruleIds": []
+  },
+  {
+    "lawId": "128",
+    "decreeIds": [],
+    "ruleIds": []
+  },
+  {
+    "lawId": "129",
+    "decreeIds": [],
+    "ruleIds": []
+  },
+  {
+    "lawId": "129-2",
+    "decreeIds": [],
+    "ruleIds": []
+  },
+  {
+    "lawId": "129-3",
+    "decreeIds": [],
+    "ruleIds": []
+  },
+  {
+    "lawId": "129-4",
+    "decreeIds": [],
+    "ruleIds": []
+  },
+  {
+    "lawId": "129-5",
+    "decreeIds": [],
+    "ruleIds": []
+  },
+  {
+    "lawId": "130",
+    "decreeIds": [
+      "68"
+    ],
+    "ruleIds": []
+  },
+  {
+    "lawId": "130-2",
+    "decreeIds": [],
+    "ruleIds": []
+  },
+  {
+    "lawId": "131",
+    "decreeIds": [],
+    "ruleIds": []
+  },
+  {
+    "lawId": "132",
+    "decreeIds": [],
+    "ruleIds": [
+      "23"
+    ]
+  },
+  {
+    "lawId": "133",
+    "decreeIds": [
+      "69",
+      "70",
+      "71",
+      "72"
+    ],
+    "ruleIds": [
+      "24",
+      "25"
+    ]
+  },
+  {
+    "lawId": "133-2",
+    "decreeIds": [
+      "72",
+      "72-2",
+      "72-3",
+      "72-4",
+      "72-5"
+    ],
+    "ruleIds": [
+      "26",
+      "27"
+    ]
+  },
+  {
+    "lawId": "133-3",
+    "decreeIds": [
+      "72-6"
+    ],
+    "ruleIds": []
+  },
+  {
+    "lawId": "134",
+    "decreeIds": [
+      "73"
+    ],
+    "ruleIds": []
+  },
+  {
+    "lawId": "135",
+    "decreeIds": [
+      "75",
+      "76"
+    ],
+    "ruleIds": [
+      "28",
+      "29",
+      "30"
+    ]
+  },
+  {
+    "lawId": "136",
+    "decreeIds": [],
+    "ruleIds": []
+  },
+  {
+    "lawId": "137",
+    "decreeIds": [],
+    "ruleIds": []
+  },
+  {
+    "lawId": "138",
+    "decreeIds": [],
+    "ruleIds": []
+  },
+  {
+    "lawId": "139",
+    "decreeIds": [],
+    "ruleIds": []
+  },
+  {
+    "lawId": "140",
+    "decreeIds": [],
+    "ruleIds": []
+  },
+  {
+    "lawId": "141",
+    "decreeIds": [],
+    "ruleIds": []
+  },
+  {
+    "lawId": "142",
+    "decreeIds": [
+      "77"
+    ],
+    "ruleIds": []
+  }
+]
